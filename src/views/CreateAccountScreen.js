@@ -1,32 +1,20 @@
-import React, { useState } from "react";
-import { View, Text, Button } from "react-native";
+import React from "react";
+import { Button } from "react-native";
 import { createAccount } from "../api/mock";
-import { setToken } from "../api/token";
+import EmailForm from "../components/forms/EmailForm";
 
 const CreateAccountScreen = ({ navigation }) => {
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const createUser = () => {
-    setErrorMessage("");
-    createAccount("test@gmail", "password", false)
-      .then(async (res) => {
-        await setToken(res.auth_token);
-        navigation.navigate("Home");
-      })
-      .catch((err) => setErrorMessage(err.message));
-  };
-
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>CreateAccount</Text>
-      <Button title="Créer un compte" onPress={createUser} />
+    <EmailForm
+      buttonText="Créer un compte"
+      onSubmit={createAccount}
+      onAuthentication={() => navigation.navigate("Home")}
+    >
       <Button
         title="Se connecter"
         onPress={() => navigation.navigate("Login")}
       />
-
-      {errorMessage ? <Text>{errorMessage}</Text> : null}
-    </View>
+    </EmailForm>
   );
 };
 
