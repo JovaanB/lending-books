@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "lending-books",
+    "slug": "lending-books",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "lending-books"
+}
