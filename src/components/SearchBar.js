@@ -45,7 +45,7 @@ const SearchBar = (props) => {
       {props.clicked && (
         <View>
           <Button
-            title="Cancel"
+            title="Quitter"
             onPress={() => {
               Keyboard.dismiss();
               props.setClicked(false);

@@ -3,9 +3,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "./src/views/LoginScreen";
 import CreateAccountScreen from "./src/views/CreateAccountScreen";
+import ProfileScreen from "./src/views/ProfileScreen";
 import HomeScreen from "./src/views/HomeScreen";
-import DetailsScreen from "./src/views/DetailsScreen";
-import CreatePostScreen from "./src/views/CreatePostScreen";
+import LibraryScreen from "./src/views/LibraryScreen";
+import LendingScreen from "./src/views/LendingScreen";
 import Logo from "./src/components/Logo";
 
 const Stack = createNativeStackNavigator();
@@ -33,8 +34,9 @@ function App() {
           options={{ title: "LENDING BOOKS", headerBackVisible: false }}
           component={HomeScreen}
         />
-        <Stack.Screen name="Details" component={DetailsScreen} />
-        <Stack.Screen name="CreatePost" component={CreatePostScreen} />
+        <Stack.Screen name="Library" component={LibraryScreen} />
+        <Stack.Screen name="Lending" component={LendingScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

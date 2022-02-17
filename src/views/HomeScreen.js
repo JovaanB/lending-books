@@ -13,7 +13,7 @@ function HomeScreen({ navigation }) {
           alignItems: "center",
           margin: 10,
         }}
-        onTouchStart={() => console.log("touch 1")}
+        onTouchStart={() => navigation.navigate("Library")}
       >
         <MaterialCommunityIcons name="bookshelf" size={90} color="black" />
         <Text>MA BIBLIOTHEQUE</Text>
@@ -25,7 +25,7 @@ function HomeScreen({ navigation }) {
           alignItems: "center",
           margin: 10,
         }}
-        onTouchStart={() => console.log("touch 2")}
+        onTouchStart={() => navigation.navigate("Lending")}
       >
         <Entypo name="cycle" size={90} color="black" />
         <Text>MES PRÊTS</Text>
