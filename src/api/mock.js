@@ -39,7 +39,7 @@ export const createAccount = (email, password, shouldSucceed = true) => {
   return mockSuccess({ auth_token: "successful_fake_token" });
 };
 
-export const getUsers = async (shouldSucceed = true) => {
+export const getBooks = async (shouldSucceed = true) => {
   const token = await getToken();
 
   if (token !== "successful_fake_token" || !shouldSucceed) {
@@ -47,12 +47,37 @@ export const getUsers = async (shouldSucceed = true) => {
   }
 
   return mockSuccess({
-    users: [
+    books: [
       {
-        email: "foo@gmail.com",
+        title: "Le Seigneur des anneaux - Intégrale",
       },
       {
-        email: "bar@gmail.com",
+        title: "Bilbo le Hobbit",
+      },
+      {
+        title: "Le Petit Prince",
+      },
+      {
+        title: "Harry Potter à l'école des sorciers",
+      },
+      {
+        title: "Ils étaient dix",
+      },
+      {
+        title: "Le rêve dans le pavillon rouge",
+      },
+      {
+        title: "Le Maître et Marguerite",
+      },
+      {
+        title: "Les Aventures d'Alice au pays des merveilles",
+      },
+      {
+        title:
+          "Le Lion, la Sorcière blanche et l'Armoire magique - Le Monde de Narnia, tome 2",
+      },
+      {
+        title: "Les Aventures de Pinocchio",
       },
     ],
   });

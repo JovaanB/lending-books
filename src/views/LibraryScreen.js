@@ -1,8 +1,21 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as React from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text } from "react-native";
+import { getBooks } from "../api/mock";
 
-function DetailsScreen() {
+const DetailsScreen = () => {
+  const [books, setBooks] = React.useState([]);
+
+  const loadBooks = () => {
+    getBooks()
+      .then((res) => setBooks(res.books))
+      .catch(() => {});
+  };
+
+  React.useEffect(() => {
+    loadBooks();
+  }, []);
+
   return (
     <View
       style={{ flex: 1, alignItems: "center", justifyContent: "flex-start" }}
@@ -18,8 +31,12 @@ function DetailsScreen() {
         <MaterialCommunityIcons name="bookshelf" size={60} color="black" />
         <Text>MA BIBLIOTHEQUE</Text>
       </View>
+      <Text>Mes livres</Text>
+      {books.map((book) => (
+        <Text>{book.title}</Text>
+      ))}
     </View>
   );
-}
+};
 
 export default DetailsScreen;
