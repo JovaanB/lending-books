@@ -1,11 +1,12 @@
 import { MaterialIcons } from "@expo/vector-icons";
 import * as React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
+import LightButton from "../components/LightButton";
 
 function ProfileScreen() {
   return (
     <View style={styles.mainContainer}>
-      <View style={styles.headerContainer}>
+      <View style={styles.centerContainer}>
         <MaterialIcons name="account-circle" size={60} color="black" />
         <Text>MON COMPTE</Text>
       </View>
@@ -25,8 +26,11 @@ function ProfileScreen() {
         <Text style={styles.titleText}>N° de téléphone</Text>
         <Text>06 55 12 01 47</Text>
       </View>
-      <View style={styles.headerContainer}>
-        <Button title="Modifier" color="#000" />
+      <View style={styles.centerContainer}>
+        <LightButton
+          icon={<MaterialIcons name="update" size={24} color="green" />}
+          buttonText="Modifier"
+        />
       </View>
     </View>
   );
@@ -38,7 +42,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
   },
-  headerContainer: {
+  centerContainer: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",

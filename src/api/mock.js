@@ -2,13 +2,13 @@ import { getToken } from "./token";
 
 const mockSuccess = (value) => {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(value), 1500);
+    setTimeout(() => resolve(value), 500);
   });
 };
 
 const mockFailure = (value) => {
   return new Promise((resolve, reject) => {
-    setTimeout(() => reject(value), 1500);
+    setTimeout(() => reject(value), 500);
   });
 };
 
@@ -50,7 +50,7 @@ export const getBooks = async (shouldSucceed = true) => {
     books: [
       {
         id: 1,
-        title: "Le Seigneur des anneaux - Intégrale",
+        title: "Le Seigneur des anneaux",
         author: "lorem ipsum",
         stars: 10,
       },
@@ -123,7 +123,7 @@ export const getLoans = async (shouldSucceed = true) => {
     loans: [
       {
         id: 1,
-        title: "Le Seigneur des anneaux - Intégrale",
+        title: "Le Seigneur des anneaux",
         author: "lorem ipsum",
         who: "François Dupont",
         from: "22/01/2022",

@@ -15,7 +15,7 @@ function HomeScreen({ navigation }) {
         }}
         onTouchStart={() => navigation.navigate("Library")}
       >
-        <MaterialCommunityIcons name="bookshelf" size={90} color="black" />
+        <MaterialCommunityIcons name="bookshelf" size={60} color="black" />
         <Text>MA BIBLIOTHEQUE</Text>
       </View>
       <View
@@ -27,7 +27,7 @@ function HomeScreen({ navigation }) {
         }}
         onTouchStart={() => navigation.navigate("Lending")}
       >
-        <Entypo name="cycle" size={90} color="black" />
+        <Entypo name="cycle" size={60} color="black" />
         <Text>MES PRÊTS</Text>
       </View>
     </Layout>

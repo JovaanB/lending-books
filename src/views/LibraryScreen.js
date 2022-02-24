@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import {
+  Entypo,
+  MaterialCommunityIcons,
+  MaterialIcons,
+} from "@expo/vector-icons";
 import { View, Text, StyleSheet } from "react-native";
 import { getBooks } from "../api/mock";
 import { Grid, Col, Row } from "react-native-easy-grid";
+import { Button } from "react-native-elements";
 
 const LibraryScreen = ({ navigation }) => {
   const [books, setBooks] = useState([]);
@@ -69,11 +74,33 @@ const LibraryScreen = ({ navigation }) => {
             {books.map((book, i) => (
               <Row key={i} style={styles.cell}>
                 <Text>{book.stars}/10</Text>
+                <MaterialIcons
+                  name="stars"
+                  size={16}
+                  color="black"
+                  style={styles.starIcon}
+                />
               </Row>
             ))}
           </Col>
         </Grid>
       )}
+      <Button
+        icon={<Entypo name="cycle" size={24} color="green" />}
+        title="Ajouter un livre"
+        buttonStyle={{
+          backgroundColor: "rgba(244, 244, 244, 1)",
+          borderRadius: 3,
+        }}
+        containerStyle={{
+          height: 40,
+          width: 200,
+          marginHorizontal: 50,
+          marginTop: 10,
+          marginBottom: 30,
+        }}
+        titleStyle={{ marginHorizontal: 20, color: "black" }}
+      />
     </View>
   );
 };
@@ -93,6 +120,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  starIcon: {
+    marginLeft: 5,
   },
 });
 

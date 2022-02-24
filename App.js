@@ -8,6 +8,7 @@ import HomeScreen from "./src/views/HomeScreen";
 import LibraryScreen from "./src/views/LibraryScreen";
 import OneBookScreen from "./src/views/OneBookScreen";
 import LendingScreen from "./src/views/LendingScreen";
+import SubscribeScreen from "./src/views/SubscribeScreen";
 import Logo from "./src/components/Logo";
 
 const Stack = createNativeStackNavigator();
@@ -39,6 +40,7 @@ function App() {
         <Stack.Screen name="OneBook" component={OneBookScreen} />
         <Stack.Screen name="Lending" component={LendingScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Subscribe" component={SubscribeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

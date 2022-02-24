@@ -1,7 +1,12 @@
-import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
+import {
+  Feather,
+  MaterialCommunityIcons,
+  MaterialIcons,
+} from "@expo/vector-icons";
 import * as React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 import { Rating } from "react-native-elements";
+import LightButton from "../components/LightButton";
 
 function OneBookScreen({ route }) {
   const { book } = route.params;
@@ -44,7 +49,10 @@ function OneBookScreen({ route }) {
         </Text>
       </View>
       <View style={styles.centerContainer}>
-        <Button title="Modifier" color="#000" />
+        <LightButton
+          icon={<MaterialIcons name="update" size={24} color="green" />}
+          buttonText="Modifier"
+        />
         <Feather name="share" size={24} color="black" />
       </View>
     </View>
@@ -62,7 +70,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     margin: 10,
-    width: "100%",
   },
   infosContainer: {
     marginHorizontal: 30,
