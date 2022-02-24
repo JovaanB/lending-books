@@ -2,13 +2,13 @@ import { getToken } from "./token";
 
 const mockSuccess = (value) => {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(value), 2000);
+    setTimeout(() => resolve(value), 1500);
   });
 };
 
 const mockFailure = (value) => {
   return new Promise((resolve, reject) => {
-    setTimeout(() => reject(value), 2000);
+    setTimeout(() => reject(value), 1500);
   });
 };
 
@@ -50,34 +50,54 @@ export const getBooks = async (shouldSucceed = true) => {
     books: [
       {
         title: "Le Seigneur des anneaux - Intégrale",
+        author: "lorem ipsum",
+        stars: 10,
       },
       {
         title: "Bilbo le Hobbit",
+        author: "lorem ipsum",
+        stars: 9,
       },
       {
         title: "Le Petit Prince",
+        author: "lorem ipsum",
+        stars: 9,
       },
       {
         title: "Harry Potter à l'école des sorciers",
+        author: "lorem ipsum",
+        stars: 8,
       },
       {
         title: "Ils étaient dix",
+        author: "lorem ipsum",
+        stars: 7,
       },
       {
         title: "Le rêve dans le pavillon rouge",
+        author: "lorem ipsum",
+        stars: 6,
       },
       {
         title: "Le Maître et Marguerite",
+        author: "lorem ipsum",
+        stars: 6,
       },
       {
         title: "Les Aventures d'Alice au pays des merveilles",
+        author: "lorem ipsum",
+        stars: 6,
       },
       {
         title:
           "Le Lion, la Sorcière blanche et l'Armoire magique - Le Monde de Narnia, tome 2",
+        author: "lorem ipsum",
+        stars: 2,
       },
       {
         title: "Les Aventures de Pinocchio",
+        author: "lorem ipsum",
+        stars: 0,
       },
     ],
   });
