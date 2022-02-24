@@ -6,6 +6,7 @@ import CreateAccountScreen from "./src/views/CreateAccountScreen";
 import ProfileScreen from "./src/views/ProfileScreen";
 import HomeScreen from "./src/views/HomeScreen";
 import LibraryScreen from "./src/views/LibraryScreen";
+import OneBookScreen from "./src/views/OneBookScreen";
 import LendingScreen from "./src/views/LendingScreen";
 import Logo from "./src/components/Logo";
 
@@ -35,6 +36,7 @@ function App() {
           component={HomeScreen}
         />
         <Stack.Screen name="Library" component={LibraryScreen} />
+        <Stack.Screen name="OneBook" component={OneBookScreen} />
         <Stack.Screen name="Lending" component={LendingScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>

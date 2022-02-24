@@ -1,11 +1,11 @@
+import React, { useState, useEffect } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import * as React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { getBooks } from "../api/mock";
 import { Grid, Col, Row } from "react-native-easy-grid";
 
-const DetailsScreen = () => {
-  const [books, setBooks] = React.useState([]);
+const LibraryScreen = ({ navigation }) => {
+  const [books, setBooks] = useState([]);
 
   const loadBooks = () => {
     getBooks()
@@ -13,7 +13,7 @@ const DetailsScreen = () => {
       .catch(() => {});
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     loadBooks();
   }, []);
 
@@ -39,7 +39,16 @@ const DetailsScreen = () => {
             </Row>
             {books.map((book, i) => (
               <Row key={i} style={styles.cell}>
-                <Text>{book.title}</Text>
+                <Text
+                  style={styles.boldText}
+                  onPress={() => {
+                    navigation.navigate("OneBook", {
+                      book,
+                    });
+                  }}
+                >
+                  {book.title}
+                </Text>
               </Row>
             ))}
           </Col>
@@ -77,6 +86,7 @@ const styles = StyleSheet.create({
   },
   titleText: { fontWeight: "bold", marginTop: 15, fontSize: 16 },
   booksContainer: { margin: 15, marginBottom: 40 },
+  boldText: { fontWeight: "bold" },
   cell: {
     borderWidth: 1,
     borderColor: "#ddd",
@@ -86,4 +96,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DetailsScreen;
+export default LibraryScreen;
