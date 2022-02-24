@@ -1,6 +1,6 @@
-import { Fontisto, MaterialIcons } from "@expo/vector-icons";
 import React, { useState } from "react";
-import { SafeAreaView, View, Button, StyleSheet } from "react-native";
+import { Fontisto, MaterialIcons } from "@expo/vector-icons";
+import { SafeAreaView, View, Button, StyleSheet, Text } from "react-native";
 import { setToken } from "../../api/token";
 import SearchBar from "../SearchBar";
 
@@ -24,6 +24,7 @@ const Layout = ({ children, navigation }) => {
           color="black"
         />
         <Fontisto
+          onPress={() => navigation.navigate("Subscribe")}
           name="credit-card"
           size={24}
           color="black"
@@ -37,6 +38,9 @@ const Layout = ({ children, navigation }) => {
         setClicked={setClicked}
       />
       {children}
+      <View style={styles.footer}>
+        <MaterialIcons name="bug-report" size={24} color="black" />
+      </View>
     </SafeAreaView>
   );
 };
@@ -55,6 +59,18 @@ const styles = StyleSheet.create({
   },
   creditIcon: {
     marginHorizontal: 10,
+  },
+  footer: {
+    position: "absolute",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    paddingHorizontal: 40,
+    alignItems: "center",
+    height: 50,
+    flex: 0.1,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
 });
 
