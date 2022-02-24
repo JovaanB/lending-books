@@ -1,7 +1,9 @@
+import { AntDesign } from "@expo/vector-icons";
 import React from "react";
-import { Button } from "react-native";
+import { Button } from "react-native-elements";
 import { createAccount } from "../api/mock";
 import EmailForm from "../components/forms/EmailForm";
+import LightButton from "../components/LightButton";
 
 const CreateAccountScreen = ({ navigation }) => {
   return (
@@ -10,9 +12,11 @@ const CreateAccountScreen = ({ navigation }) => {
       onSubmit={createAccount}
       onAuthentication={() => navigation.navigate("Home")}
     >
-      <Button
-        title="Se connecter"
-        onPress={() => navigation.navigate("Login")}
+      <LightButton
+        navigation={navigation}
+        icon={<AntDesign name="login" size={24} color="green" />}
+        url="Login"
+        buttonText="Se connecter"
       />
     </EmailForm>
   );
